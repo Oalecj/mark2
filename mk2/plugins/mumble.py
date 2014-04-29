@@ -7,7 +7,7 @@ from twisted.internet.defer import TimeoutError
 from twisted.internet.protocol import DatagramProtocol
 
 from mk2.plugins import Plugin
-from mk2.events import ServerOutput
+from mk2.events import PlayerChat
 
 class MumbleProtocol(DatagramProtocol):
     buff = ""
@@ -56,17 +56,16 @@ msg {username} &2status: &adown.
     def setup(self):
         self.users = []
         self.protocol = MumbleProtocol(self, self.host, self.port)
-        self.register(self.handle_trigger, ServerOutput, pattern="<([A-Za-z0-9_]{1,16})> "+re.escape(self.trigger))
+        self.register(self.handle_trigger, PlayerChat)
         reactor.listenUDP(0, self.protocol)
 
     def teardown(self):
         self.protocol.transport.loseConnection()
 
     def handle_trigger(self, event):
-        username = event.match.group(1).encode('utf8')
         d = defer.Deferred()
-        d.addCallback(lambda d: self.send_response(self.command_up,   username=username, **d))
-        d.addErrback (lambda d: self.send_response(self.command_down, username=username))
+        d.addCallback(lambda d: self.send_response(self.command_up,   username=event.username, **d))
+        d.addErrback (lambda d: self.send_response(self.command_down, username=event.username))
         #add a timeout
         self.delayed_task(self.got_timeout, self.timeout)
         self.users.append(d)
