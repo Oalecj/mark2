@@ -1,12 +1,6 @@
-# THIS SOFTWARE IS MAINTAINED IN A FORK:
+# MARK2 IS NOW MAINTAINED BY GSAND:
 
 # https://github.com/github.com/gsand/mark2
-
-mark2 is continuing to accumulate bugs which will almost certainly not be fixed.
-
-Future versions of minecraft WILL break mark2 in serious ways. Some things are already badly broken.
-
-You are advised to move to another wrapper!
 
 # mark2 [![Build Status](https://travis-ci.org/mcdevs/mark2.png?branch=master)](https://travis-ci.org/mcdevs/mark2)
 
