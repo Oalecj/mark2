@@ -1,6 +1,6 @@
 # MARK2 IS NOW MAINTAINED BY GSAND:
 
-# https://github.com/github.com/gsand/mark2
+# https://github.com/gsand/mark2
 
 # mark2 [![Build Status](https://travis-ci.org/mcdevs/mark2.png?branch=master)](https://travis-ci.org/mcdevs/mark2)
 
