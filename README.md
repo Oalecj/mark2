@@ -1,6 +1,6 @@
-# THIS SOFTWARE IS ABANDONED
+# THIS SOFTWARE IS MAINTAINED IN A FORK:
 
-# THIS SOFTWARE IS ABANDONED
+# https://github.com/github.com/gsand/mark2
 
 mark2 is continuing to accumulate bugs which will almost certainly not be fixed.
 
